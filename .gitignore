@@ -1,0 +1,8 @@
+tongue_env/
+Tongue_Hybrid_Project1/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pth
+*.h5

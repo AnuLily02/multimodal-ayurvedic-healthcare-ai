@@ -1,0 +1,56 @@
+def render_user_bubble(text="", img_bytes=None):
+    safe_text = html.escape(text) if text else ""
+
+    image_html = ""
+    if img_bytes:
+        img_b64 = image_to_base64(img_bytes)
+        image_html = f"""
+        <div style="margin-bottom:10px;">
+            <img src="data:image/png;base64,{img_b64}"
+                 style="
+                    width:220px;
+                    max-width:100%;
+                    border-radius:16px;
+                    display:block;
+                 ">
+        </div>
+        """
+
+    text_html = f"<div>{safe_text}</div>" if safe_text else ""
+
+    bubble_html = f"""
+    <div style="
+        background:#1e3d2f;
+        padding:14px 16px;
+        border-radius:18px;
+        margin:8px 0 8px auto;
+        color:white;
+        max-width:320px;
+        width:fit-content;
+        white-space:pre-wrap;
+        word-wrap:break-word;
+    ">
+        {image_html}
+        {text_html}
+    </div>
+    """
+    st.markdown(bubble_html, unsafe_allow_html=True)
+
+def render_ai_bubble(text):
+    safe_text = html.escape(text) if text else ""
+    bubble_html = f"""
+    <div style="
+        background:#244d3a;
+        padding:12px 16px;
+        border-radius:18px;
+        margin:8px auto 8px 0;
+        color:white;
+        max-width:75%;
+        width:fit-content;
+        white-space:pre-wrap;
+        word-wrap:break-word;
+    ">
+        {safe_text}
+    </div>
+    """
+    st.markdown(bubble_html, unsafe_allow_html=True)

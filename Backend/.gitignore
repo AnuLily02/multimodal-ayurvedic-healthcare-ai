@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Database
+*.db
+
+# Virtual environments
+venv/
+env/
+
+# Ollama models (just in case)
+.ollama/
+
+# Streamlit
+.streamlit/
+
+# OS files
+.DS_Store
+Thumbs.db

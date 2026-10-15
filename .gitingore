@@ -1,0 +1,18 @@
+# Virtual Environments (wherever they live in the project)
+**/tongue_env/
+**/venv/
+**/.venv/
+**/env/
+
+# Python Caches & Dependencies
+**/__pycache__/
+*.pyc
+**/node_modules/
+
+# Model Weights & Datasets
+*.pth
+*.pt
+*.h5
+*.bin
+*.onnx
+*.safetensors

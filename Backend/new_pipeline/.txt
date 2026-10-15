@@ -1,0 +1,90 @@
+# new_pipeline/orchestrator.py
+
+import os
+import sys
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
+from new_pipeline.image_ml_model import predict_image_ml
+from new_pipeline.logic_ml_model import predict_logic_ml
+from logic.logic_engine import analyze
+from logic.llm_formatter import generate_llm_response
+
+
+DOSHA_LABELS = ["Vata", "Pitta", "Kapha"]
+
+
+def get_prediction_from_probs(probs):
+    max_index = probs.index(max(probs))
+    return DOSHA_LABELS[max_index]
+
+
+def combine_outputs(image_probs, logic_probs):
+    """
+    Combines Image ML output and Logic ML output inside orchestrator.
+    """
+
+    combined_probs = []
+
+    for i in range(len(DOSHA_LABELS)):
+        avg_prob = (image_probs[i] + logic_probs[i]) / 2
+        combined_probs.append(avg_prob)
+
+    final_prediction = get_prediction_from_probs(combined_probs)
+
+    return {
+        "prediction": final_prediction,
+        "confidence": combined_probs,
+        "image_ml_output": {
+            "prediction": get_prediction_from_probs(image_probs),
+            "confidence": image_probs
+        },
+        "logic_ml_output": {
+            "prediction": get_prediction_from_probs(logic_probs),
+            "confidence": logic_probs
+        }
+    }
+
+
+def run_pipeline(symptoms, cnn_output=None, user_message=None, is_followup=False):
+    """
+    Final pipeline:
+    1. Symptoms go to logic engine
+    2. Logic scores go to Logic ML model
+    3. CNN output goes to Image ML model
+    4. Orchestrator combines both outputs
+    5. Combined output goes to LLM
+    """
+
+    # 1. Get logic scores from rule-based logic engine
+    logic_scores = analyze(symptoms)
+
+    # 2. Logic ML prediction
+    logic_probs = predict_logic_ml(logic_scores)
+
+    # 3. Image ML prediction
+    if cnn_output is not None:
+        image_probs = predict_image_ml(cnn_output)
+    else:
+        # If no image/CNN output is given, use neutral zero image confidence
+        image_probs = [0, 0, 0]
+
+    # 4. Combine image ML + logic ML inside orchestrator
+    final_result = combine_outputs(image_probs, logic_probs)
+
+    # 5. Send final result to LLM
+    llm_response = generate_llm_response(
+        symptoms=symptoms,
+        final_result=final_result,
+        user_message=user_message,
+        is_followup=is_followup
+    )
+
+    return {
+        "logic_scores": logic_scores,
+        "image_ml_output": final_result["image_ml_output"],
+        "logic_ml_output": final_result["logic_ml_output"],
+        "final_result": final_result,
+        "llm_response": llm_response
+    }
