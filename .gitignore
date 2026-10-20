@@ -1,8 +1,31 @@
-tongue_env/
-Tongue_Hybrid_Project1/
-venv/
-.venv/
-__pycache__/
+# Virtual Environments
+**/tongue_env/
+**/venv/
+**/.venv/
+**/env/
+
+# Python Caches & Dependencies
+**/__pycache__/
 *.pyc
+**/node_modules/
+
+# Model Weights & Large Files
 *.pth
+*.pt
 *.h5
+*.bin
+*.onnx
+*.safetensors
+**/data/
+**/Crop_images/
+# Ignore all raw, processed, and cropped datasets everywhere
+**/raw_dataset/
+**/processed_dataset/
+**/Cropped_images/
+**/Crop_images/
+**/data/
+*.png
+*.jpg
+*.jpeg
+*.JPG
+*.PNG
