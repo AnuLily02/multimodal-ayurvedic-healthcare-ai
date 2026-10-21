@@ -30,6 +30,29 @@ The project integrates a deep learning-based image classification model with a m
 - **Backend API Integration:** Uses Flask to connect the frontend with the AI prediction components.
 - **Report Generation:** Includes a prescription/report download feature in the user interface.
 
+
+## 🖥️Application Screenshots
+
+The following screenshots illustrate the application workflow. Replace the image paths below with the screenshots added to the screenshots/ folder.
+1. Home Page
+   <img width="1280" height="692" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (4)" src="https://github.com/user-attachments/assets/7405aee6-819b-45e2-aae5-2e6b2ed3bc26" />
+   <img width="1280" height="688" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (1)" src="https://github.com/user-attachments/assets/dd948788-319d-499a-9553-80daa2c20a54" />
+
+
+2. Patient Information and Symptom Input
+   <img width="1280" height="687" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (2)" src="https://github.com/user-attachments/assets/63476762-da5a-461d-a4ff-a4aa3d73de0c" />
+   <img width="1280" height="719" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (5)" src="https://github.com/user-attachments/assets/520878bb-0be0-4ea0-b061-b944dbc1c6e0" />
+
+
+3. Generative AI Chatbot
+    <img width="1280" height="719" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (5)" src="https://github.com/user-attachments/assets/520878bb-0be0-4ea0-b061-b944dbc1c6e0" />
+
+
+4. Assessment Report
+     <img width="1280" height="719" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (5)" src="https://github.com/user-attachments/assets/35a2d8ae-43f7-4e2e-a56c-da517fb0305d" />
+     <img width="1280" height="734" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM" src="https://github.com/user-attachments/assets/32258124-2614-46d0-bda2-4c0a694090a5" />
+
+
 ## 🧠 Technologies Used
 
 ### Programming Languages
