@@ -41,15 +41,14 @@ The following screenshots illustrate the application workflow. Replace the image
 
 2. Patient Information and Symptom Input
    <img width="1280" height="687" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (2)" src="https://github.com/user-attachments/assets/63476762-da5a-461d-a4ff-a4aa3d73de0c" />
-   <img width="1280" height="719" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (5)" src="https://github.com/user-attachments/assets/520878bb-0be0-4ea0-b061-b944dbc1c6e0" />
 
-
+  
 3. Generative AI Chatbot
     <img width="1280" height="719" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (5)" src="https://github.com/user-attachments/assets/520878bb-0be0-4ea0-b061-b944dbc1c6e0" />
 
 
 4. Assessment Report
-     <img width="1280" height="719" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (5)" src="https://github.com/user-attachments/assets/35a2d8ae-43f7-4e2e-a56c-da517fb0305d" />
+     <img width="1280" height="728" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM (3)" src="https://github.com/user-attachments/assets/8f23db93-d4c8-4b59-9864-afac7149ee65" />
      <img width="1280" height="734" alt="WhatsApp Image 2026-10-20 at 7 00 30 PM" src="https://github.com/user-attachments/assets/32258124-2614-46d0-bda2-4c0a694090a5" />
 
 
